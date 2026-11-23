@@ -1959,39 +1959,44 @@
   </footer>
 
   <!-- Application Logic -->
-  <script>/**
+  <script>
+/**
  * T.R.A.N.S.F.O.R.M. Teaching Model & Grade 6 Camping Showcase
- * Interactive Application Logic
+ * Interactive Application Logic (Polished & Bug-Free)
  * Toshkent Viloyati Pedagogik Mahorat Markazi
  */
 
-// Vocabulary dataset matching teacher's Appendix B.2 & B.1
-const CAMPING_DATA = [
-  { id: 1, en: "tent", uz: "chodir", sentence: "We sleep in a tent near the lake.", icon: "assets/items/tent.svg", letter: "A", pin: 1 },
-  { id: 2, en: "campfire", uz: "gulxan", sentence: "We sit around the campfire in the evening.", icon: "assets/items/campfire.svg", letter: "B", pin: 2 },
-  { id: 3, en: "backpack", uz: "ryukzak", sentence: "My backpack is heavy.", icon: "assets/items/backpack.svg", letter: "C", pin: 3 },
-  { id: 4, en: "flashlight", uz: "qoʻl fonari", sentence: "I use a flashlight at night.", icon: "assets/items/flashlight.svg", letter: "D", pin: 4 },
-  { id: 5, en: "compass", uz: "kompas", sentence: "The compass shows north.", icon: "assets/items/compass.svg", letter: "E", pin: 5 },
-  { id: 6, en: "sleeping bag", uz: "uyqu xaltasi", sentence: "My sleeping bag is warm.", icon: "assets/items/sleeping_bag.svg", letter: "F", pin: 6 },
-  { id: 7, en: "map", uz: "xarita", sentence: "Let’s look at the map.", icon: "assets/items/map.svg", letter: "G", pin: 7 },
-  { id: 8, en: "water bottle", uz: "suv idishi", sentence: "Take a water bottle with you.", icon: "assets/items/water_bottle.svg", letter: "H", pin: 8 },
-  { id: 9, en: "marshmallows", uz: "zefir", sentence: "We roast marshmallows on sticks.", icon: "assets/items/marshmallows.svg", letter: "I", pin: 9 },
-  { id: 10, en: "binoculars", uz: "durbin", sentence: "She looks at birds with binoculars.", icon: "assets/items/binoculars.svg", letter: "J", pin: 10 },
-  { id: 11, en: "fishing rod", uz: "qarmoq", sentence: "He catches a fish with a fishing rod.", icon: "assets/items/fishing_rod.svg", letter: "K", pin: null },
-  { id: 12, en: "lantern", uz: "fonus", sentence: "The lantern gives light in the tent.", icon: "assets/items/lantern.svg", letter: "L", pin: 8 }
-];
-
-// Additional scene items (B.1)
-const SCENE_EXTRA_ITEMS = {
-  4: { en: "tree", uz: "daraxt", sentence: "There are green pine trees around the campsite." },
-  5: { en: "mountain", uz: "tog'", sentence: "High snow-capped mountains surround the valley." },
-  6: { en: "lake", uz: "ko'l", sentence: "The blue lake reflects the sunshine." },
-  7: { en: "sun", uz: "quyosh", sentence: "The sun is shining brightly in the clear sky." },
-  9: { en: "log", uz: "o'tin / g'o'la", sentence: "We sit on wooden logs near the campfire." },
-  10: { en: "bird", uz: "qush", sentence: "Wild birds are flying across the clouds." }
+// 1. Scene Items (Appendix B.1 - 10 objects in the illustrated campsite scene)
+const SCENE_ITEMS = {
+  1: { num: 1, en: "tent", uz: "chodir", sentence: "We sleep in a tent near the lake." },
+  2: { num: 2, en: "campfire", uz: "gulxan", sentence: "We sit around the campfire in the evening." },
+  3: { num: 3, en: "backpack", uz: "ryukzak", sentence: "My backpack is heavy." },
+  4: { num: 4, en: "tree", uz: "daraxt", sentence: "There are green pine trees around the campsite." },
+  5: { num: 5, en: "mountain", uz: "tog‘", sentence: "High snow-capped mountains surround the valley." },
+  6: { num: 6, en: "lake", uz: "ko‘l", sentence: "The blue lake is clean and calm." },
+  7: { num: 7, en: "sun", uz: "quyosh", sentence: "The sun is shining brightly in the clear sky." },
+  8: { num: 8, en: "lantern", uz: "fonus", sentence: "The lantern gives light in the tent." },
+  9: { num: 9, en: "log", uz: "g‘o‘la / o‘tin", sentence: "We sit on wooden logs near the campfire." },
+  10: { num: 10, en: "bird", uz: "qush", sentence: "Wild birds are flying across the clouds." }
 };
 
-// Word Search Grid Definition (12x12)
+// 2. 12 Flashcard Vocabulary Items (Appendix B.2 & B.3)
+const CAMPING_DATA = [
+  { id: 1, en: "tent", uz: "chodir", sentence: "We sleep in a tent near the lake.", icon: "assets/items/tent.svg", letter: "A" },
+  { id: 2, en: "campfire", uz: "gulxan", sentence: "We sit around the campfire in the evening.", icon: "assets/items/campfire.svg", letter: "B" },
+  { id: 3, en: "backpack", uz: "ryukzak", sentence: "My backpack is heavy.", icon: "assets/items/backpack.svg", letter: "C" },
+  { id: 4, en: "flashlight", uz: "qoʻl fonari", sentence: "I use a flashlight at night.", icon: "assets/items/flashlight.svg", letter: "D" },
+  { id: 5, en: "compass", uz: "kompas", sentence: "The compass shows north.", icon: "assets/items/compass.svg", letter: "E" },
+  { id: 6, en: "sleeping bag", uz: "uyqu xaltasi", sentence: "My sleeping bag is warm.", icon: "assets/items/sleeping_bag.svg", letter: "F" },
+  { id: 7, en: "map", uz: "xarita", sentence: "Let’s look at the map.", icon: "assets/items/map.svg", letter: "G" },
+  { id: 8, en: "water bottle", uz: "suv idishi", sentence: "Take a water bottle with you.", icon: "assets/items/water_bottle.svg", letter: "H" },
+  { id: 9, en: "marshmallows", uz: "zefir", sentence: "We roast marshmallows on sticks.", icon: "assets/items/marshmallows.svg", letter: "I" },
+  { id: 10, en: "binoculars", uz: "durbin", sentence: "She looks at birds with binoculars.", icon: "assets/items/binoculars.svg", letter: "J" },
+  { id: 11, en: "fishing rod", uz: "qarmoq", sentence: "He catches a fish with a fishing rod.", icon: "assets/items/fishing_rod.svg", letter: "K" },
+  { id: 12, en: "lantern", uz: "fonus", sentence: "The lantern gives light in the tent.", icon: "assets/items/lantern.svg", letter: "L" }
+];
+
+// 3. Word Search Grid Definition (12x12)
 const WS_GRID_LETTERS = [
   ['F','K','E','P','N','B','B','W','C','S','T','K'],
   ['K','Y','F','L','U','P','I','T','O','T','C','C'],
@@ -2037,22 +2042,20 @@ document.addEventListener("DOMContentLoaded", () => {
    SPEECH SYNTHESIS HELPER
    ========================================================================== */
 function speakText(text, lang = "en-US") {
-  if (!("speechSynthesis" in window)) {
-    console.warn("Speech synthesis not supported in this browser.");
-    return;
+  if (!("speechSynthesis" in window)) return;
+  try {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+    utterance.rate = 0.9;
+    utterance.pitch = 1.0;
+    const voices = window.speechSynthesis.getVoices();
+    const naturalVoice = voices.find(v => v.lang.startsWith("en") && (v.name.includes("Natural") || v.name.includes("Google") || v.name.includes("Samantha")));
+    if (naturalVoice) utterance.voice = naturalVoice;
+    window.speechSynthesis.speak(utterance);
+  } catch (err) {
+    console.warn("Speech synthesis error:", err);
   }
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = lang;
-  utterance.rate = 0.9;
-  utterance.pitch = 1.0;
-  
-  // Try to pick a natural English voice if available
-  const voices = window.speechSynthesis.getVoices();
-  const naturalVoice = voices.find(v => v.lang.startsWith("en") && (v.name.includes("Natural") || v.name.includes("Google") || v.name.includes("Samantha")));
-  if (naturalVoice) utterance.voice = naturalVoice;
-
-  window.speechSynthesis.speak(utterance);
 }
 
 function initSpeechSynthesis() {
@@ -2066,8 +2069,6 @@ function initSpeechSynthesis() {
    ========================================================================== */
 function initTabs() {
   const tabButtons = document.querySelectorAll(".nav-tab-btn");
-  const tabPanes = document.querySelectorAll(".tab-pane");
-
   tabButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const targetId = btn.getAttribute("data-tab");
@@ -2075,7 +2076,6 @@ function initTabs() {
     });
   });
 
-  // Handle URL hash routing if present
   const hash = window.location.hash.replace("#", "");
   if (hash && document.getElementById(hash)) {
     switchTab(hash);
@@ -2098,16 +2098,16 @@ function switchTab(tabId) {
 }
 
 /* ==========================================================================
-   SCENE EXPLORER (APPENDIX B.1)
+   SCENE EXPLORER (APPENDIX B.1) - FIXED & ROCK SOLID
    ========================================================================== */
 let sceneQuizActive = false;
 let currentQuizTarget = null;
+let currentActivePin = 1;
 
 function initSceneExplorer() {
   const container = document.getElementById("scene-interactive-mount");
   if (!container) return;
 
-  // The SVG is now embedded inline in index.html for instant 0ms load & file:// compatibility
   attachSceneEvents();
   selectSceneItem(1);
 
@@ -2120,11 +2120,19 @@ function initSceneExplorer() {
     });
   });
 
-  // Quiz Toggle Button
+  // Quiz Mode Toggle
   const quizBtn = document.getElementById("btn-scene-quiz-mode");
   if (quizBtn) {
     quizBtn.addEventListener("click", () => {
       toggleSceneQuiz();
+    });
+  }
+
+  // Explore Mode Button
+  const exploreBtn = document.getElementById("btn-scene-explore-mode");
+  if (exploreBtn) {
+    exploreBtn.addEventListener("click", () => {
+      if (sceneQuizActive) toggleSceneQuiz();
     });
   }
 }
@@ -2133,126 +2141,168 @@ function attachSceneEvents() {
   const svg = document.getElementById("camping-scene-svg");
   if (!svg) return;
 
+  // 1. Pin Badges (1 to 10)
   const pinBadges = svg.querySelectorAll(".pin-badge");
   pinBadges.forEach(pin => {
+    const num = parseInt(pin.getAttribute("data-number"));
+    pin.style.cursor = "pointer";
+
     pin.addEventListener("click", (e) => {
-      const num = parseInt(pin.getAttribute("data-number"));
+      e.stopPropagation();
       handlePinClick(num);
     });
 
     pin.addEventListener("mouseenter", () => {
-      pin.classList.add("highlighted");
+      highlightSceneTarget(num, true);
     });
 
     pin.addEventListener("mouseleave", () => {
-      pin.classList.remove("highlighted");
+      highlightSceneTarget(num, false);
+    });
+  });
+
+  // 2. Illustrated Scene Objects (tent, campfire, backpack, tree, mountain, lake, sun, lantern, log, bird)
+  const hotspots = svg.querySelectorAll(".scene-hotspot");
+  hotspots.forEach(spot => {
+    const target = parseInt(spot.getAttribute("data-target"));
+    spot.style.cursor = "pointer";
+
+    spot.addEventListener("click", (e) => {
+      e.stopPropagation();
+      handlePinClick(target);
+    });
+
+    spot.addEventListener("mouseenter", () => {
+      highlightSceneTarget(target, true);
+    });
+
+    spot.addEventListener("mouseleave", () => {
+      highlightSceneTarget(target, false);
     });
   });
 }
 
+function highlightSceneTarget(num, isHover) {
+  const svg = document.getElementById("camping-scene-svg");
+  if (!svg) return;
+  const pin = svg.querySelector(`.pin-badge[data-number="${num}"]`);
+  const spot = svg.querySelector(`.scene-hotspot[data-target="${num}"]`);
+
+  if (isHover) {
+    pin?.classList.add("highlighted");
+    spot?.classList.add("highlighted");
+  } else {
+    if (currentActivePin !== num) {
+      pin?.classList.remove("highlighted");
+      spot?.classList.remove("highlighted");
+    }
+  }
+}
+
 function handlePinClick(pinNumber) {
   if (sceneQuizActive) {
-    if (pinNumber === currentQuizTarget.pin) {
-      triggerConfetti();
-      speakText("Correct! Good job!");
-      alert(`🎉 To'g'ri! / Correct! Siz "${currentQuizTarget.en}" obyektini topdingiz!`);
-      pickNextSceneQuizItem();
-    } else {
-      speakText("Try again!");
-      alert(`Qaytadan urinib ko'ring! Siz ${pinNumber}-raqamni tanladingiz. Qidirilayotgan so'z: "${currentQuizTarget.en}"`);
-    }
+    handleQuizAnswer(pinNumber);
   } else {
     selectSceneItem(pinNumber);
   }
 }
 
 function selectSceneItem(pinNumber) {
-  let en = "", uz = "", sentence = "";
+  const item = SCENE_ITEMS[pinNumber];
+  if (!item) return;
 
-  // Check 12 main vocabulary items first
-  const vocabMatch = CAMPING_DATA.find(item => item.pin === pinNumber);
-  if (vocabMatch) {
-    en = vocabMatch.en;
-    uz = vocabMatch.uz;
-    sentence = vocabMatch.sentence;
-  } else if (SCENE_EXTRA_ITEMS[pinNumber]) {
-    en = SCENE_EXTRA_ITEMS[pinNumber].en;
-    uz = SCENE_EXTRA_ITEMS[pinNumber].uz;
-    sentence = SCENE_EXTRA_ITEMS[pinNumber].sentence;
-  } else {
-    return;
-  }
+  currentActivePin = pinNumber;
 
-  // Update preview bar
   const numBadge = document.getElementById("scene-active-num");
   const enEl = document.getElementById("scene-active-en");
   const uzEl = document.getElementById("scene-active-uz");
   const sentEl = document.getElementById("scene-active-sentence");
   const speakBtn = document.getElementById("scene-active-speak-btn");
 
-  if (numBadge) numBadge.textContent = pinNumber;
-  if (enEl) enEl.textContent = en;
-  if (uzEl) uzEl.textContent = uz;
-  if (sentEl) sentEl.textContent = `"${sentence}"`;
+  if (numBadge) numBadge.textContent = item.num;
+  if (enEl) enEl.textContent = item.en;
+  if (uzEl) uzEl.textContent = item.uz;
+  if (sentEl) sentEl.textContent = `"${item.sentence}"`;
 
   if (speakBtn) {
-    speakBtn.onclick = () => speakText(`${en}. ${sentence}`);
+    speakBtn.onclick = () => speakText(`${item.en}. ${item.sentence}`);
   }
 
-  // Update chips active state
+  // Update chips
   document.querySelectorAll(".scene-chip").forEach(chip => {
     chip.classList.toggle("active", parseInt(chip.getAttribute("data-number")) === pinNumber);
   });
 
-  // Highlight badge on SVG
+  // Highlight active pin & hotspot on SVG
   const svg = document.getElementById("camping-scene-svg");
   if (svg) {
     svg.querySelectorAll(".pin-badge").forEach(p => {
-      const isCur = parseInt(p.getAttribute("data-number")) === pinNumber;
-      p.classList.toggle("highlighted", isCur);
+      p.classList.toggle("highlighted", parseInt(p.getAttribute("data-number")) === pinNumber);
+    });
+    svg.querySelectorAll(".scene-hotspot").forEach(s => {
+      s.classList.toggle("highlighted", parseInt(s.getAttribute("data-target")) === pinNumber);
     });
   }
 }
 
 function toggleSceneQuiz() {
   const quizBtn = document.getElementById("btn-scene-quiz-mode");
+  const exploreBtn = document.getElementById("btn-scene-explore-mode");
+  const promptBox = document.getElementById("scene-quiz-prompt-box");
+
   sceneQuizActive = !sceneQuizActive;
 
   if (sceneQuizActive) {
-    quizBtn.classList.add("active");
-    quizBtn.innerHTML = `<span>🎯</span> Viktorinani to'xtatish`;
+    quizBtn?.classList.add("active");
+    exploreBtn?.classList.remove("active");
+    promptBox?.classList.remove("hidden");
     pickNextSceneQuizItem();
   } else {
-    quizBtn.classList.remove("active");
-    quizBtn.innerHTML = `<span>🎯</span> Rasmdan topish (Quiz Mode)`;
-    document.getElementById("scene-quiz-prompt-box")?.classList.add("hidden");
+    quizBtn?.classList.remove("active");
+    exploreBtn?.classList.add("active");
+    promptBox?.classList.add("hidden");
     selectSceneItem(1);
   }
 }
 
 function pickNextSceneQuizItem() {
-  const availableItems = [
-    { pin: 1, en: "tent", uz: "chodir" },
-    { pin: 2, en: "campfire", uz: "gulxan" },
-    { pin: 3, en: "backpack", uz: "ryukzak" },
-    { pin: 4, en: "tree", uz: "daraxt" },
-    { pin: 5, en: "mountain", uz: "tog'" },
-    { pin: 6, en: "lake", uz: "ko'l" },
-    { pin: 7, en: "sun", uz: "quyosh" },
-    { pin: 8, en: "lantern", uz: "fonus" },
-    { pin: 9, en: "log", uz: "o'tin" },
-    { pin: 10, en: "bird", uz: "qush" }
-  ];
+  const keys = Object.keys(SCENE_ITEMS);
+  const randKey = keys[Math.floor(Math.random() * keys.length)];
+  currentQuizTarget = SCENE_ITEMS[randKey];
 
-  const rand = availableItems[Math.floor(Math.random() * availableItems.length)];
-  currentQuizTarget = rand;
-
-  const promptBox = document.getElementById("scene-quiz-prompt-box");
   const promptText = document.getElementById("scene-quiz-prompt-text");
-  if (promptBox && promptText) {
-    promptBox.classList.remove("hidden");
-    promptText.innerHTML = `Qani, rasmdan <strong>"${rand.en.toUpperCase()}" (${rand.uz})</strong> qayerdaligini toping va raqamini bosing!`;
-    speakText(`Find: ${rand.en}`);
+  if (promptText) {
+    promptText.innerHTML = `Qani, rasmdan <strong>"${currentQuizTarget.en.toUpperCase()}" (${currentQuizTarget.uz})</strong> qayerdaligini toping va ustiga bosing!`;
+    promptText.style.color = "var(--slate-900)";
+  }
+  speakText(`Find: ${currentQuizTarget.en}`);
+}
+
+function handleQuizAnswer(selectedNum) {
+  const promptText = document.getElementById("scene-quiz-prompt-text");
+
+  if (selectedNum === currentQuizTarget.num) {
+    triggerConfetti();
+    speakText("Correct! Well done!");
+
+    selectSceneItem(selectedNum);
+
+    if (promptText) {
+      promptText.innerHTML = `<span style="color:#15803d; font-weight:800;">🎉 Barakalla! To‘g‘ri! / Correct!</span> Siz "${currentQuizTarget.en}" (${currentQuizTarget.uz}) obyektini topdingiz!`;
+    }
+
+    setTimeout(() => {
+      if (sceneQuizActive) {
+        pickNextSceneQuizItem();
+      }
+    }, 1400);
+  } else {
+    const wrongItem = SCENE_ITEMS[selectedNum];
+    speakText("Try again!");
+
+    if (promptText) {
+      promptText.innerHTML = `<span style="color:#dc2626; font-weight:700;">Qaytadan urinib ko‘ring!</span> Siz <strong>${selectedNum} - ${wrongItem ? wrongItem.en : ''} (${wrongItem ? wrongItem.uz : ''})</strong> ni bosdingiz. Qidirilayotgan so‘z: <strong>"${currentQuizTarget.en.toUpperCase()}" (${currentQuizTarget.uz})</strong>`;
+    }
   }
 }
 
@@ -2281,7 +2331,7 @@ function renderVocabularyCards() {
         "${item.sentence}"
       </div>
       <div class="vocab-card-footer">
-        <button class="btn-card-audio" data-en="${item.en}" data-sent="${item.sentence}">
+        <button class="btn-card-audio" data-en="${item.en}">
           <span>🔊</span> Eshitish (Audio)
         </button>
         <span style="font-size: 0.78rem; color: var(--slate-400); font-weight:700;">Karta: ${item.letter}</span>
@@ -2300,7 +2350,6 @@ function renderVocabularyCards() {
 /* ==========================================================================
    FLASH AND GUESS CLASSROOM GAME
    ========================================================================== */
-let flashGameInterval = null;
 let currentFlashIndex = 0;
 
 function initFlashAndGuessGame() {
@@ -2321,24 +2370,20 @@ function startFlashRound() {
   const playBtn = document.getElementById("btn-flash-start");
   const nextBtn = document.getElementById("btn-flash-next");
 
-  // Pick random item
   currentFlashIndex = Math.floor(Math.random() * CAMPING_DATA.length);
   const item = CAMPING_DATA[currentFlashIndex];
 
-  // Reset displays
-  if (wordDisplay) wordDisplay.textContent = "???";
+  if (wordDisplay) wordDisplay.textContent = "Diqqat bilan qarang...";
   if (revealBtn) revealBtn.style.display = "inline-flex";
   if (nextBtn) nextBtn.style.display = "none";
   if (playBtn) playBtn.style.display = "none";
 
-  // Show image for 2 seconds
   if (imgDisplay) {
     imgDisplay.src = item.icon;
     imgDisplay.style.opacity = "1";
     imgDisplay.style.filter = "none";
   }
 
-  // Animate timer bar
   if (timerBar) {
     timerBar.style.transition = "none";
     timerBar.style.width = "100%";
@@ -2348,13 +2393,12 @@ function startFlashRound() {
     }, 50);
   }
 
-  // Hide after 2 seconds
   setTimeout(() => {
     if (imgDisplay) {
       imgDisplay.style.filter = "blur(18px) grayscale(100%)";
     }
     if (wordDisplay) {
-      wordDisplay.textContent = "Bu qaysi so'z edi? / What was it?";
+      wordDisplay.textContent = "Bu qaysi so‘z edi? / What was it?";
     }
   }, 2000);
 }
@@ -2366,9 +2410,7 @@ function revealFlashAnswer() {
   const revealBtn = document.getElementById("btn-flash-reveal");
   const nextBtn = document.getElementById("btn-flash-next");
 
-  if (imgDisplay) {
-    imgDisplay.style.filter = "none";
-  }
+  if (imgDisplay) imgDisplay.style.filter = "none";
   if (wordDisplay) {
     wordDisplay.innerHTML = `<span style="color:var(--amber-400); font-weight:800; font-size:1.4rem;">${item.en.toUpperCase()}</span> — ${item.uz}`;
     speakText(item.en);
@@ -2378,13 +2420,12 @@ function revealFlashAnswer() {
 }
 
 /* ==========================================================================
-   HANDOUT 1: INTERACTIVE MATCHING GAME
+   HANDOUT 1: INTERACTIVE MATCHING GAME (BI-DIRECTIONAL & ROCK-SOLID)
    ========================================================================== */
 let matchSelectedLetter = null;
 let matchSelectedWordId = null;
 let pairedMatches = {};
 
-// Solutions: 1-E, 2-L, 3-A, 4-J, 5-C, 6-H, 7-F, 8-B, 9-K, 10-I, 11-D, 12-G
 const MATCH_SOLUTIONS = {
   1: "E", 2: "L", 3: "A", 4: "J", 5: "C", 6: "H",
   7: "F", 8: "B", 9: "K", 10: "I", 11: "D", 12: "G"
@@ -2398,8 +2439,8 @@ function initMatchingGame() {
 
   letterCards.forEach(card => {
     card.addEventListener("click", () => {
-      const letter = card.getAttribute("data-letter");
       if (card.classList.contains("paired")) return;
+      const letter = card.getAttribute("data-letter");
 
       letterCards.forEach(c => c.classList.remove("selected"));
       card.classList.add("selected");
@@ -2410,8 +2451,8 @@ function initMatchingGame() {
 
   wordCards.forEach(card => {
     card.addEventListener("click", () => {
-      const id = parseInt(card.getAttribute("data-id"));
       if (card.classList.contains("paired")) return;
+      const id = parseInt(card.getAttribute("data-id"));
 
       wordCards.forEach(c => c.classList.remove("selected"));
       card.classList.add("selected");
@@ -2428,12 +2469,10 @@ function checkPairAttempt() {
   if (!matchSelectedLetter || !matchSelectedWordId) return;
 
   const correctLetter = MATCH_SOLUTIONS[matchSelectedWordId];
-
   const wordCard = document.querySelector(`.match-word-item[data-id="${matchSelectedWordId}"]`);
   const letterCard = document.querySelector(`.match-img-item[data-letter="${matchSelectedLetter}"]`);
 
   if (correctLetter === matchSelectedLetter) {
-    // Match success!
     pairedMatches[matchSelectedWordId] = matchSelectedLetter;
     if (wordCard) {
       wordCard.classList.remove("selected");
@@ -2449,10 +2488,8 @@ function checkPairAttempt() {
     speakText("Good!");
     matchSelectedLetter = null;
     matchSelectedWordId = null;
-
     updateMatchScore();
   } else {
-    // Mismatch
     wordCard?.classList.add("shake-error");
     letterCard?.classList.add("shake-error");
     setTimeout(() => {
@@ -2471,7 +2508,6 @@ function updateMatchScore() {
 
   if (count === 12) {
     triggerConfetti();
-    alert("🎉 Ajoyib! 1-tarqatma (Matching) to'liq va xatosiz bajarildi!");
   }
 }
 
@@ -2481,7 +2517,7 @@ function resetMatchGame() {
   matchSelectedWordId = null;
 
   document.querySelectorAll(".match-img-item, .match-word-item").forEach(card => {
-    card.classList.remove("selected", "paired");
+    card.classList.remove("selected", "paired", "shake-error");
     const badge = card.querySelector(".matched-badge");
     if (badge) badge.textContent = "___";
   });
@@ -2554,10 +2590,7 @@ function checkGapFillAnswers() {
     scoreEl.style.display = "inline-block";
   }
 
-  if (score === 10) {
-    triggerConfetti();
-    alert("🎉 Barcha 10 ta jumlani to'g'ri to'ldirdingiz! Barakalla!");
-  }
+  if (score === 10) triggerConfetti();
 }
 
 function resetGapFill() {
@@ -2573,10 +2606,11 @@ function resetGapFill() {
 }
 
 /* ==========================================================================
-   HANDOUT 4: PLAYABLE WORD SEARCH (12x12 GRID)
+   HANDOUT 4: PLAYABLE WORD SEARCH (12x12 GRID - CLEAN DRAG & CLICK)
    ========================================================================== */
 let isMouseDown = false;
-let selectedCells = [];
+let startCell = null;
+let currentHighlightedCells = [];
 let foundWordsCount = 0;
 
 function initWordSearchGame() {
@@ -2585,7 +2619,6 @@ function initWordSearchGame() {
 
   gridContainer.innerHTML = "";
 
-  // Render 12x12 cells
   for (let r = 0; r < 12; r++) {
     for (let c = 0; c < 12; c++) {
       const cell = document.createElement("div");
@@ -2594,26 +2627,28 @@ function initWordSearchGame() {
       cell.setAttribute("data-row", r);
       cell.setAttribute("data-col", c);
 
-      // Mouse drag handlers
       cell.addEventListener("mousedown", (e) => {
         e.preventDefault();
         isMouseDown = true;
-        clearCurrentSelection();
-        addCellToSelection(r, c, cell);
+        startCell = { r, c };
+        highlightLine(startCell, { r, c });
       });
 
       cell.addEventListener("mouseenter", () => {
-        if (isMouseDown) {
-          addCellToSelection(r, c, cell);
+        if (isMouseDown && startCell) {
+          highlightLine(startCell, { r, c });
         }
       });
 
-      // Touch handlers for mobile/tablets
-      cell.addEventListener("touchstart", (e) => {
-        e.preventDefault();
-        isMouseDown = true;
-        clearCurrentSelection();
-        addCellToSelection(r, c, cell);
+      cell.addEventListener("click", () => {
+        if (!startCell) {
+          startCell = { r, c };
+          highlightLine(startCell, { r, c });
+        } else {
+          highlightLine(startCell, { r, c });
+          validateWordSelection();
+          startCell = null;
+        }
       });
 
       gridContainer.appendChild(cell);
@@ -2624,13 +2659,7 @@ function initWordSearchGame() {
     if (isMouseDown) {
       isMouseDown = false;
       validateWordSelection();
-    }
-  });
-
-  document.addEventListener("touchend", () => {
-    if (isMouseDown) {
-      isMouseDown = false;
-      validateWordSelection();
+      startCell = null;
     }
   });
 
@@ -2638,32 +2667,56 @@ function initWordSearchGame() {
   if (resetBtn) resetBtn.addEventListener("click", resetWordSearch);
 }
 
-function addCellToSelection(r, c, cellEl) {
-  const key = `${r},${c}`;
-  if (!selectedCells.some(item => item.r === r && item.c === c)) {
-    selectedCells.push({ r, c, el: cellEl, letter: WS_GRID_LETTERS[r][c] });
-    cellEl.classList.add("selecting");
+function highlightLine(start, end) {
+  clearSelection();
+
+  const dr = end.r - start.r;
+  const dc = end.c - start.c;
+  const stepR = dr === 0 ? 0 : dr / Math.abs(dr);
+  const stepC = dc === 0 ? 0 : dc / Math.abs(dc);
+
+  // Must be strictly horizontal, vertical, or 45-degree diagonal
+  const isHorizontal = dr === 0;
+  const isVertical = dc === 0;
+  const isDiagonal = Math.abs(dr) === Math.abs(dc);
+
+  if (!isHorizontal && !isVertical && !isDiagonal) {
+    const startEl = document.querySelector(`.ws-cell[data-row="${start.r}"][data-col="${start.c}"]`);
+    if (startEl) {
+      startEl.classList.add("selecting");
+      currentHighlightedCells.push({ r: start.r, c: start.c, letter: WS_GRID_LETTERS[start.r][start.c] });
+    }
+    return;
+  }
+
+  const steps = Math.max(Math.abs(dr), Math.abs(dc));
+  for (let i = 0; i <= steps; i++) {
+    const curR = start.r + i * stepR;
+    const curC = start.c + i * stepC;
+    const cellEl = document.querySelector(`.ws-cell[data-row="${curR}"][data-col="${curC}"]`);
+    if (cellEl) {
+      cellEl.classList.add("selecting");
+      currentHighlightedCells.push({ r: curR, c: curC, letter: WS_GRID_LETTERS[curR][curC] });
+    }
   }
 }
 
-function clearCurrentSelection() {
-  selectedCells.forEach(item => {
-    item.el.classList.remove("selecting");
+function clearSelection() {
+  document.querySelectorAll(".ws-cell.selecting").forEach(el => {
+    el.classList.remove("selecting");
   });
-  selectedCells = [];
+  currentHighlightedCells = [];
 }
 
 function validateWordSelection() {
-  if (selectedCells.length === 0) return;
+  if (currentHighlightedCells.length === 0) return;
 
-  const formedWord = selectedCells.map(c => c.letter).join("");
+  const formedWord = currentHighlightedCells.map(c => c.letter).join("");
   const reversedWord = formedWord.split("").reverse().join("");
 
-  // Check if matches any target word
-  let matchedTarget = WS_TARGET_WORDS.find(t => !t.found && (t.word === formedWord || t.word === reversedWord));
+  const matchedTarget = WS_TARGET_WORDS.find(t => !t.found && (t.word === formedWord || t.word === reversedWord));
 
   if (matchedTarget) {
-    // Matched!
     matchedTarget.found = true;
     foundWordsCount++;
 
@@ -2675,32 +2728,27 @@ function validateWordSelection() {
       }
     });
 
-    // Mark word pill
     const pill = document.querySelector(`.ws-word-pill[data-word="${matchedTarget.word}"]`);
     if (pill) pill.classList.add("found");
 
     speakText(matchedTarget.word);
 
-    // Update found counter
     const counterEl = document.getElementById("ws-found-counter");
     if (counterEl) counterEl.textContent = `${foundWordsCount} / 8`;
 
     if (foundWordsCount === 8) {
       triggerConfetti();
-      setTimeout(() => {
-        alert("🎉 Qoyilmaqom! Barcha 8 ta so'zni qidiruv jadvalida topdingiz!");
-      }, 300);
     }
   } else {
-    // Clear selection
-    clearCurrentSelection();
+    clearSelection();
   }
 
-  selectedCells = [];
+  currentHighlightedCells = [];
 }
 
 function resetWordSearch() {
   foundWordsCount = 0;
+  startCell = null;
   WS_TARGET_WORDS.forEach(t => t.found = false);
 
   document.querySelectorAll(".ws-cell").forEach(cell => {
@@ -2718,21 +2766,10 @@ function resetWordSearch() {
 /* ==========================================================================
    45-MINUTE LESSON PLAN LIVE TIMER & HIGHLIGHTER
    ========================================================================== */
-let timerSeconds = 45 * 60; // 45 minutes
+let timerSeconds = 45 * 60;
 let timerInterval = null;
 let isTimerRunning = false;
 
-// 10 stages cumulative minutes:
-// 1: 0-2m
-// 2: 2-7m
-// 3: 7-15m
-// 4: 15-19m
-// 5: 19-23m
-// 6: 23-28m
-// 7: 28-36m
-// 8: 36-40m
-// 9: 40-43m
-// 10: 43-45m
 const STAGE_INTERVALS = [
   { stage: 1, start: 0, end: 2 },
   { stage: 2, start: 2, end: 7 },
@@ -2771,7 +2808,6 @@ function startClassTimer() {
       highlightActiveStage(elapsedMin);
     } else {
       pauseClassTimer();
-      alert("⏱️ 45 daqiqalik dars vaqti yakunlandi!");
     }
   }, 1000);
 }
@@ -2791,7 +2827,6 @@ function resetClassTimer() {
 function updateTimerDisplay() {
   const display = document.getElementById("timer-digits");
   if (!display) return;
-
   const min = Math.floor(timerSeconds / 60);
   const sec = timerSeconds % 60;
   display.textContent = `${min.toString().padStart(2, "0")}:${sec.toString().padStart(2, "0")}`;
@@ -2826,7 +2861,6 @@ function initRubricCalculator() {
 
       rubricScores[criterion] = score;
 
-      // Update button selection
       document.querySelectorAll(`.rubric-score-btn[data-crit="${criterion}"]`).forEach(b => {
         b.classList.remove("selected");
       });
@@ -2856,16 +2890,16 @@ function calculateRubricTotal() {
 
   if (total >= 13) {
     level = "Juda yaxshi natija (Very Good Achievement)";
-    feedback = "O'quvchilar kamping mavzusi bo'yicha lug'at va jumlalarni to'liq o'zlashtirgan, erkin muloqot qilib, guruhda hamjihatlikda loyiha rejasini taqdim etdilar.";
+    feedback = "O‘quvchilar kamping mavzusi bo‘yicha lug‘at va jumlalarni to‘liq o‘zlashtirgan, erkin muloqot qilib, guruhda hamjihatlikda loyiha rejasini taqdim etdilar.";
   } else if (total >= 10) {
     level = "Yaxshi natija (Good Achievement)";
-    feedback = "O'quvchilar so'zlardan to'g'ri foydalanmoqda. Keyingi darsda jumlalarni to'liq ifodalash va sabablarni batafsil tushuntirishga e'tibor qaratish tavsiya etiladi.";
+    feedback = "O‘quvchilar so‘zlardan to‘g‘ri foydalanmoqda. Keyingi darsda jumlalarni to‘liq ifodalash va sabablarni batafsil tushuntirishga e’tibor qaratish tavsiya etiladi.";
   } else if (total >= 7) {
     level = "Rivojlanayotgan (Developing)";
-    feedback = "Asosiy tushunchalar shakllangan. So'z birikmalari va gap qoliplari bilan ko'proq mashq bajarish zarur.";
+    feedback = "Asosiy tushunchalar shakllangan. So‘z birikmalari va gap qoliplari bilan ko‘proq mashq bajarish zarur.";
   } else {
-    level = "Qo'shimcha yordam zarur (Needs Further Support)";
-    feedback = "O'quvchiga rasmli lug'at kartalari va tayyor iboralar (sentence starters) orqali individual yordam ko'rsatish lozim.";
+    level = "Qo‘shimcha yordam zarur (Needs Further Support)";
+    feedback = "O‘quvchiga rasmli lug‘at kartalari va tayyor iboralar (sentence starters) orqali individual yordam ko‘rsatish lozim.";
   }
 
   if (levelBadge) levelBadge.textContent = level;
@@ -2873,7 +2907,7 @@ function calculateRubricTotal() {
 }
 
 /* ==========================================================================
-   MODAL CONTROLS (TEACHER KEY & PRINT)
+   MODAL CONTROLS & ABSTRACT LANGUAGE TOGGLE
    ========================================================================== */
 function initModals() {
   const answerKeyBtn = document.getElementById("btn-open-answer-key");
@@ -2881,33 +2915,24 @@ function initModals() {
   const closeBtn = document.getElementById("btn-close-answer-key");
 
   if (answerKeyBtn && modal) {
-    answerKeyBtn.addEventListener("click", () => {
-      modal.classList.add("open");
-    });
+    answerKeyBtn.addEventListener("click", () => modal.classList.add("open"));
   }
 
   if (closeBtn && modal) {
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("open");
-    });
+    closeBtn.addEventListener("click", () => modal.classList.remove("open"));
   }
 
-  // Close on outside backdrop click
   if (modal) {
     modal.addEventListener("click", (e) => {
       if (e.target === modal) modal.classList.remove("open");
     });
   }
 
-  // Print button
   const printBtns = document.querySelectorAll(".btn-trigger-print");
   printBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      window.print();
-    });
+    btn.addEventListener("click", () => window.print());
   });
 
-  // Abstract Language Switcher
   const abstractUzBtn = document.getElementById("btn-abstract-uz");
   const abstractEnBtn = document.getElementById("btn-abstract-en");
   const abstractUzBox = document.getElementById("abstract-content-uz");
@@ -2917,15 +2942,15 @@ function initModals() {
     abstractUzBtn.addEventListener("click", () => {
       abstractUzBtn.classList.add("active");
       abstractEnBtn.classList.remove("active");
-      abstractUzBox.style.display = "block";
-      abstractEnBox.style.display = "none";
+      if (abstractUzBox) abstractUzBox.style.display = "block";
+      if (abstractEnBox) abstractEnBox.style.display = "none";
     });
 
     abstractEnBtn.addEventListener("click", () => {
       abstractEnBtn.classList.add("active");
       abstractUzBtn.classList.remove("active");
-      abstractUzBox.style.display = "none";
-      abstractEnBox.style.display = "block";
+      if (abstractUzBox) abstractUzBox.style.display = "none";
+      if (abstractEnBox) abstractEnBox.style.display = "block";
     });
   }
 }
@@ -2971,7 +2996,7 @@ function triggerConfetti() {
     particles.forEach(p => {
       p.x += p.vx;
       p.y += p.vy;
-      p.vy += 0.35; // gravity
+      p.vy += 0.35;
       p.alpha -= 0.015;
 
       if (p.alpha > 0) {
