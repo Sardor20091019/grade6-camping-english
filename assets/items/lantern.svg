@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="64" fill="#D5E8D8"/>
+  <g stroke="#2D3748" stroke-width="6" stroke-linejoin="round">
+    <!-- Top Carry Loop -->
+    <path d="M195,160 C195,100 317,100 317,160" fill="none" stroke="#3D5A6C" stroke-width="14" stroke-linecap="round"/>
+    <!-- Cap & Roof -->
+    <rect x="180" y="150" width="152" height="35" rx="14" fill="#3D5A6C"/>
+    <!-- Glass Chamber -->
+    <rect x="195" y="185" width="122" height="190" rx="8" fill="#FFF8B3"/>
+    <!-- Metal Grill Bars -->
+    <line x1="225" y1="185" x2="225" y2="375" stroke="#2D3748" stroke-width="5"/>
+    <line x1="256" y1="185" x2="256" y2="375" stroke="#2D3748" stroke-width="5"/>
+    <line x1="287" y1="185" x2="287" y2="375" stroke="#2D3748" stroke-width="5"/>
+    <!-- Inner Flame -->
+    <path d="M256,260 C272,300 290,325 285,360 C280,370 268,375 256,375 C244,375 232,370 227,360 C222,325 240,300 256,260 Z" fill="#E84A27"/>
+    <path d="M256,290 C266,320 276,335 272,360 C268,368 262,370 256,370 C250,370 244,368 240,360 C236,335 246,320 256,290 Z" fill="#FFF275"/>
+    <!-- Heavy Base -->
+    <rect x="175" y="375" width="162" height="40" rx="16" fill="#3D5A6C"/>
+  </g>
+</svg>

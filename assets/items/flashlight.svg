@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="64" fill="#E8E5F8"/>
+  <!-- Light Beam -->
+  <polygon points="310,240 460,70 475,225 390,285" fill="#FFF8B3" opacity="0.9"/>
+  <!-- Flashlight Body at angle -->
+  <g transform="rotate(-45 256 256)" stroke="#2D3748" stroke-width="6" stroke-linejoin="round">
+    <!-- Tail Cap -->
+    <rect x="120" y="235" width="28" height="42" rx="6" fill="#1E272E"/>
+    <!-- Handle -->
+    <rect x="145" y="238" width="140" height="36" rx="4" fill="#3D5A6C"/>
+    <!-- Grip bands -->
+    <line x1="180" y1="238" x2="180" y2="274" stroke="#2D3748" stroke-width="4"/>
+    <line x1="210" y1="238" x2="210" y2="274" stroke="#2D3748" stroke-width="4"/>
+    <line x1="240" y1="238" x2="240" y2="274" stroke="#2D3748" stroke-width="4"/>
+    <!-- Head Base -->
+    <polygon points="285,236 325,215 325,297 285,276" fill="#F1C40F"/>
+    <!-- Head Rim -->
+    <rect x="325" y="210" width="22" height="92" rx="5" fill="#D4AC0D"/>
+    <!-- Switch -->
+    <rect x="235" y="228" width="24" height="10" rx="3" fill="#E74C3C"/>
+  </g>
+</svg>

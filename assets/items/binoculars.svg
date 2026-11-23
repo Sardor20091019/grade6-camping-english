@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="64" fill="#CDE7D8"/>
+  <g stroke="#2D3748" stroke-width="6" stroke-linejoin="round">
+    <!-- Center Bridge -->
+    <rect x="230" y="240" width="52" height="42" rx="8" fill="#3D5A6C"/>
+    <!-- Focus Wheel -->
+    <rect x="242" y="215" width="28" height="28" rx="5" fill="#1E272E"/>
+    <!-- Left Barrel -->
+    <rect x="135" y="150" width="95" height="210" rx="42" fill="#3D5A6C"/>
+    <rect x="150" y="125" width="65" height="30" rx="10" fill="#1E272E"/>
+    <rect x="130" y="345" width="105" height="40" rx="16" fill="#1E272E"/>
+    <ellipse cx="182" cy="365" rx="36" ry="12" fill="#74B9FF"/>
+    <ellipse cx="170" cy="363" rx="12" ry="5" fill="#FFFFFF" opacity="0.7"/>
+    <!-- Right Barrel -->
+    <rect x="282" y="150" width="95" height="210" rx="42" fill="#3D5A6C"/>
+    <rect x="297" y="125" width="65" height="30" rx="10" fill="#1E272E"/>
+    <rect x="277" y="345" width="105" height="40" rx="16" fill="#1E272E"/>
+    <ellipse cx="330" cy="365" rx="36" ry="12" fill="#74B9FF"/>
+    <ellipse cx="318" cy="363" rx="12" ry="5" fill="#FFFFFF" opacity="0.7"/>
+  </g>
+</svg>

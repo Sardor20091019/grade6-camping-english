@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%" id="camping-scene-svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="lakeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect x="0" y="0" width="1200" height="800" fill="url(#skyGrad)"/>
+
+  <!-- Sun (#7) -->
+  <g id="item-sun" class="scene-hotspot" data-target="7">
+    <!-- Sun Rays -->
+    <g stroke="#F59E0B" stroke-width="6" stroke-linecap="round">
+      <line x1="980" y1="90" x2="980" y2="40"/>
+      <line x1="980" y1="250" x2="980" y2="300"/>
+      <line x1="900" y1="170" x2="850" y2="170"/>
+      <line x1="1060" y1="170" x2="1110" y2="170"/>
+      <line x1="923" y1="113" x2="888" y2="78"/>
+      <line x1="1037" y1="227" x2="1072" y2="262"/>
+      <line x1="923" y1="227" x2="888" y2="262"/>
+      <line x1="1037" y1="113" x2="1072" y2="78"/>
+    </g>
+    <!-- Sun Core -->
+    <circle cx="980" cy="170" r="75" fill="#FBBF24" stroke="#F59E0B" stroke-width="8"/>
+    <circle cx="980" cy="170" r="55" fill="#FDE047"/>
+  </g>
+
+  <!-- Clouds -->
+  <g fill="#FFFFFF" opacity="0.9">
+    <!-- Cloud 1 -->
+    <path d="M140,150 C140,120 170,100 200,110 C220,80 270,85 285,115 C310,110 330,130 330,155 C330,175 310,190 280,190 L160,190 C130,190 120,170 140,150 Z"/>
+    <!-- Cloud 2 -->
+    <path d="M470,110 C470,90 490,75 510,80 C525,60 560,65 570,85 C590,80 605,95 605,115 C605,130 590,140 570,140 L485,140 C465,140 455,125 470,110 Z"/>
+  </g>
+
+  <!-- Birds (#10) -->
+  <g id="item-bird" class="scene-hotspot" data-target="10" stroke="#1E293B" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M370,180 Q385,165 400,180 Q415,165 430,180"/>
+    <path d="M480,195 Q495,180 510,195 Q525,180 540,195"/>
+    <path d="M420,225 Q435,210 450,225 Q465,210 480,225"/>
+  </g>
+
+  <!-- Mountains (#5) -->
+  <g id="item-mountain" class="scene-hotspot" data-target="5">
+    <!-- Left Mountain -->
+    <polygon points="210,230 40,550 480,550" fill="#64748B"/>
+    <polygon points="210,230 260,330 230,310 200,340 170,305 150,335 120,310 160,230" fill="#F8FAFC"/>
+
+    <!-- Right Background Mountain -->
+    <polygon points="920,330 650,550 1190,550" fill="#94A3B8"/>
+
+    <!-- Middle Big Mountain -->
+    <polygon points="560,170 320,550 820,550" fill="#475569"/>
+    <!-- Snow Cap on Middle -->
+    <polygon points="560,170 625,270 590,250 560,285 520,250 480,290" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Distant Hill & Grass Ground -->
+  <rect x="0" y="440" width="1200" height="360" fill="#4ADE80"/>
+  <path d="M0,490 Q300,450 600,480 T1200,460 L1200,800 L0,800 Z" fill="#22C55E"/>
+  <path d="M0,530 Q400,500 800,530 T1200,510 L1200,800 L0,800 Z" fill="#16A34A"/>
+
+  <!-- Pine Trees (#4) -->
+  <g id="item-tree" class="scene-hotspot" data-target="4">
+    <!-- Far Left Tree -->
+    <g transform="translate(10, 360)">
+      <rect x="58" y="110" width="20" height="50" fill="#78350F"/>
+      <polygon points="68,30 20,90 116,90" fill="#15803D"/>
+      <polygon points="68,60 10,120 126,120" fill="#166534"/>
+    </g>
+    <!-- Forest Group Right -->
+    <g transform="translate(740, 390)">
+      <rect x="180" y="110" width="24" height="60" fill="#78350F"/>
+      <polygon points="192,20 130,90 254,90" fill="#15803D"/>
+      <polygon points="192,60 115,130 269,130" fill="#166534"/>
+    </g>
+    <g transform="translate(850, 410)">
+      <rect x="180" y="100" width="24" height="60" fill="#78350F"/>
+      <polygon points="192,20 130,85 254,85" fill="#16A34A"/>
+      <polygon points="192,55 120,120 264,120" fill="#15803D"/>
+    </g>
+    <g transform="translate(680, 440)">
+      <rect x="160" y="100" width="24" height="60" fill="#78350F"/>
+      <polygon points="172,10 110,80 234,80" fill="#166534"/>
+      <polygon points="172,50 95,120 249,120" fill="#14532D"/>
+    </g>
+  </g>
+
+  <!-- Lake (#6) -->
+  <g id="item-lake" class="scene-hotspot" data-target="6">
+    <ellipse cx="330" cy="620" rx="280" ry="85" fill="url(#lakeGrad)" stroke="#38BDF8" stroke-width="6"/>
+    <!-- Water Highlights / Ripples -->
+    <path d="M260,630 Q300,622 340,630" fill="none" stroke="#E0F2FE" stroke-width="4" stroke-linecap="round"/>
+    <path d="M200,645 Q230,640 260,645" fill="none" stroke="#E0F2FE" stroke-width="3" stroke-linecap="round"/>
+    <path d="M440,640 Q470,635 500,640" fill="none" stroke="#E0F2FE" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Tent (#1) -->
+  <g id="item-tent" class="scene-hotspot" data-target="1" filter="url(#softShadow)">
+    <!-- Base grass bar -->
+    <rect x="580" y="710" width="230" height="14" rx="7" fill="#15803D"/>
+    <!-- Guy lines -->
+    <line x1="705" y1="465" x2="520" y2="745" stroke="#1E293B" stroke-width="5" stroke-linecap="round"/>
+    <line x1="705" y1="465" x2="890" y2="745" stroke="#1E293B" stroke-width="5" stroke-linecap="round"/>
+    <!-- Tent body -->
+    <polygon points="705,465 585,715 825,715" fill="#EA580C"/>
+    <polygon points="705,465 705,715 825,715" fill="#C2410C"/>
+    <!-- Entrance door flaps -->
+    <polygon points="705,560 645,715 765,715" fill="#451A03"/>
+    <!-- Top flagpole & red flag -->
+    <rect x="702" y="420" width="6" height="48" fill="#1E293B"/>
+    <polygon points="708,422 755,438 708,454" fill="#DC2626"/>
+  </g>
+
+  <!-- Backpack (#3) -->
+  <g id="item-backpack" class="scene-hotspot" data-target="3" transform="translate(775, 605)">
+    <!-- Handle -->
+    <path d="M50,15 C50,0 80,0 80,15" fill="none" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
+    <!-- Side pouches -->
+    <rect x="8" y="55" width="16" height="55" rx="8" fill="#845E56" stroke="#1E293B" stroke-width="3"/>
+    <rect x="106" y="55" width="16" height="55" rx="8" fill="#845E56" stroke="#1E293B" stroke-width="3"/>
+    <!-- Main bag -->
+    <rect x="18" y="20" width="94" height="110" rx="24" fill="#DC2626" stroke="#1E293B" stroke-width="4"/>
+    <!-- Flap -->
+    <path d="M26,45 C26,20 104,20 104,45 C104,65 26,65 26,45 Z" fill="#991B1B" stroke="#1E293B" stroke-width="4"/>
+    <rect x="56" y="52" width="18" height="20" rx="3" fill="#FBBF24" stroke="#1E293B" stroke-width="2"/>
+    <!-- Front pocket -->
+    <rect x="34" y="80" width="62" height="38" rx="8" fill="#F87171" stroke="#1E293B" stroke-width="3"/>
+    <line x1="40" y1="95" x2="90" y2="95" stroke="#1E293B" stroke-width="2"/>
+  </g>
+
+  <!-- Lantern (#8) -->
+  <g id="item-lantern" class="scene-hotspot" data-target="8" transform="translate(535, 610)">
+    <path d="M22,25 C22,5 50,5 50,25" fill="none" stroke="#334155" stroke-width="5" stroke-linecap="round"/>
+    <rect x="16" y="22" width="40" height="12" rx="4" fill="#334155"/>
+    <rect x="20" y="34" width="32" height="60" rx="3" fill="#FEF08A" stroke="#1E293B" stroke-width="3"/>
+    <line x1="28" y1="34" x2="28" y2="94" stroke="#1E293B" stroke-width="2"/>
+    <line x1="36" y1="34" x2="36" y2="94" stroke="#1E293B" stroke-width="2"/>
+    <line x1="44" y1="34" x2="44" y2="94" stroke="#1E293B" stroke-width="2"/>
+    <path d="M36,55 C40,70 46,75 36,85 C26,75 32,70 36,55 Z" fill="#F97316"/>
+    <rect x="14" y="94" width="44" height="14" rx="4" fill="#334155" stroke="#1E293B" stroke-width="2"/>
+  </g>
+
+  <!-- Logs (#9) -->
+  <g id="item-log" class="scene-hotspot" data-target="9">
+    <!-- Log 1 left -->
+    <g transform="translate(810, 720)">
+      <rect x="0" y="0" width="130" height="34" rx="10" fill="#78350F" stroke="#1E293B" stroke-width="4"/>
+      <ellipse cx="12" cy="17" rx="10" ry="14" fill="#A16207" stroke="#1E293B" stroke-width="3"/>
+      <ellipse cx="12" cy="17" rx="4" ry="6" fill="#78350F"/>
+    </g>
+    <!-- Log 2 right -->
+    <g transform="translate(1055, 725)">
+      <rect x="0" y="0" width="120" height="34" rx="10" fill="#78350F" stroke="#1E293B" stroke-width="4"/>
+      <ellipse cx="112" cy="17" rx="10" ry="14" fill="#A16207" stroke="#1E293B" stroke-width="3"/>
+      <ellipse cx="112" cy="17" rx="4" ry="6" fill="#78350F"/>
+    </g>
+  </g>
+
+  <!-- Campfire (#2) -->
+  <g id="item-campfire" class="scene-hotspot" data-target="2" transform="translate(900, 600)">
+    <!-- Crossed Fire Logs -->
+    <g stroke="#1E293B" stroke-width="4" stroke-linejoin="round">
+      <rect x="10" y="100" width="140" height="26" rx="8" transform="rotate(-15 80 110)" fill="#78350F"/>
+      <rect x="15" y="100" width="140" height="26" rx="8" transform="rotate(15 85 110)" fill="#5A2E0F"/>
+      <!-- Stones ring -->
+      <circle cx="15" cy="130" r="14" fill="#94A3B8"/>
+      <circle cx="45" cy="135" r="12" fill="#64748B"/>
+      <circle cx="125" cy="135" r="12" fill="#64748B"/>
+      <circle cx="155" cy="130" r="14" fill="#94A3B8"/>
+      <circle cx="85" cy="140" r="11" fill="#475569"/>
+    </g>
+    <!-- Flames -->
+    <path d="M85,5 C105,45 155,75 145,120 C140,135 125,140 85,140 C45,140 30,135 25,120 C15,75 65,45 85,5 Z" fill="#DC2626"/>
+    <path d="M85,35 C100,65 130,85 125,125 C120,135 105,140 85,140 C65,140 50,135 45,125 C40,85 70,65 85,35 Z" fill="#F97316"/>
+    <path d="M85,75 C95,95 110,105 105,130 C100,138 92,140 85,140 C78,140 70,138 65,130 C60,105 75,95 85,75 Z" fill="#FDE047"/>
+  </g>
+
+  <!-- Number Badges (1 - 10) matching teacher's Appendix B.1 -->
+  <!-- 1: Tent -->
+  <g class="pin-badge" data-number="1" transform="translate(705, 515)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">1</text>
+  </g>
+
+  <!-- 2: Campfire -->
+  <g class="pin-badge" data-number="2" transform="translate(980, 680)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">2</text>
+  </g>
+
+  <!-- 3: Backpack -->
+  <g class="pin-badge" data-number="3" transform="translate(830, 695)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">3</text>
+  </g>
+
+  <!-- 4: Tree -->
+  <g class="pin-badge" data-number="4" transform="translate(925, 435)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">4</text>
+  </g>
+
+  <!-- 5: Mountain -->
+  <g class="pin-badge" data-number="5" transform="translate(210, 260)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">5</text>
+  </g>
+
+  <!-- 6: Lake -->
+  <g class="pin-badge" data-number="6" transform="translate(325, 620)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">6</text>
+  </g>
+
+  <!-- 7: Sun -->
+  <g class="pin-badge" data-number="7" transform="translate(980, 170)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">7</text>
+  </g>
+
+  <!-- 8: Lantern -->
+  <g class="pin-badge" data-number="8" transform="translate(560, 680)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">8</text>
+  </g>
+
+  <!-- 9: Log -->
+  <g class="pin-badge" data-number="9" transform="translate(880, 740)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">9</text>
+  </g>
+
+  <!-- 10: Bird -->
+  <g class="pin-badge" data-number="10" transform="translate(420, 135)" style="cursor:pointer">
+    <circle cx="0" cy="0" r="22" fill="#DC2626" stroke="#FFFFFF" stroke-width="4" filter="url(#softShadow)"/>
+    <text x="0" y="8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle">10</text>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="64" fill="#CDECF8"/>
+  <!-- Water wave arc -->
+  <path d="M150,420 Q280,390 420,420" fill="none" stroke="#74B9FF" stroke-width="5" stroke-linecap="round"/>
+  <!-- Rod Handle & Shaft -->
+  <g stroke="#2D3748" stroke-width="6" stroke-linejoin="round">
+    <rect x="110" y="410" width="22" height="32" rx="4" transform="rotate(-40 121 426)" fill="#2D3748"/>
+    <!-- Pole -->
+    <line x1="120" y1="420" x2="350" y2="150" stroke="#8D6E63" stroke-width="12" stroke-linecap="round"/>
+    <!-- Reel -->
+    <rect x="195" y="325" width="45" height="38" rx="8" fill="#546E7A"/>
+    <!-- Guide Line -->
+    <path d="M350,150 L415,200 L415,350" fill="none" stroke="#455A64" stroke-width="4"/>
+    <!-- Hook -->
+    <path d="M415,350 C415,365 395,365 395,350" fill="none" stroke="#2D3748" stroke-width="6" stroke-linecap="round"/>
+    <!-- Fish -->
+    <path d="M330,350 C360,320 420,320 450,350 L450,320 L425,350 L450,380 L450,350 C420,380 360,380 330,350 Z" fill="#0984E3"/>
+    <circle cx="355" cy="348" r="6" fill="#FFFFFF"/>
+    <circle cx="353" cy="348" r="3" fill="#000000"/>
+  </g>
+</svg>

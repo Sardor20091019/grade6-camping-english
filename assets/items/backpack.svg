@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="64" fill="#FCE5E8"/>
+  <!-- Top Handle -->
+  <path d="M200,120 C200,80 312,80 312,120" fill="none" stroke="#2D3748" stroke-width="14" stroke-linecap="round"/>
+  <!-- Side Pockets -->
+  <rect x="98" y="270" width="38" height="105" rx="14" fill="#845E56" stroke="#2D3748" stroke-width="6"/>
+  <rect x="376" y="270" width="38" height="105" rx="14" fill="#845E56" stroke="#2D3748" stroke-width="6"/>
+  <!-- Main Body -->
+  <rect x="124" y="160" width="264" height="260" rx="48" fill="#D63031" stroke="#2D3748" stroke-width="6"/>
+  <!-- Top Flap -->
+  <path d="M144,215 C144,145 368,145 368,215 C368,255 144,255 144,215 Z" fill="#A81D1E" stroke="#2D3748" stroke-width="6"/>
+  <!-- Buckle Strap -->
+  <rect x="234" y="225" width="44" height="50" rx="8" fill="#F1C40F" stroke="#2D3748" stroke-width="5"/>
+  <rect x="246" y="238" width="20" height="22" rx="4" fill="#34495E"/>
+  <!-- Front Zipper Pocket -->
+  <rect x="170" y="315" width="172" height="85" rx="18" fill="#FF7675" stroke="#2D3748" stroke-width="5"/>
+  <line x1="180" y1="350" x2="332" y2="350" stroke="#2D3748" stroke-width="5" stroke-linecap="round"/>
+</svg>

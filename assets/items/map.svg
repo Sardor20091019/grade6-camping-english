@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="64" fill="#FFF8D6"/>
+  <!-- Folded Map panels -->
+  <g stroke="#2D3748" stroke-width="6" stroke-linejoin="round">
+    <!-- Panel 1 -->
+    <polygon points="120,130 190,145 190,405 120,390" fill="#FBF5D5"/>
+    <!-- Panel 2 -->
+    <polygon points="190,145 320,130 320,390 190,405" fill="#EAE2B7"/>
+    <!-- Panel 3 -->
+    <polygon points="320,130 392,145 392,405 320,390" fill="#FBF5D5"/>
+  </g>
+  <!-- Map Features: Lakes & Hills -->
+  <ellipse cx="155" cy="190" rx="20" ry="14" fill="#A8D5BA"/>
+  <rect x="235" y="270" width="46" height="34" rx="8" fill="#74B9FF" transform="rotate(-10 258 287)"/>
+  <circle cx="355" cy="325" r="22" fill="#A8D5BA"/>
+  <!-- Trail Line -->
+  <path d="M140,340 Q170,300 200,310 T265,240 T320,250 T360,190" fill="none" stroke="#D63031" stroke-width="6" stroke-dasharray="10,6" stroke-linecap="round"/>
+  <!-- Target X -->
+  <g stroke="#D63031" stroke-width="8" stroke-linecap="round">
+    <line x1="350" y1="180" x2="370" y2="200"/>
+    <line x1="370" y1="180" x2="350" y2="200"/>
+  </g>
+</svg>
